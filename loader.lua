@@ -1,11 +1,9 @@
-print("Loader started")
-
-local success, result = pcall(function()
-    return require("main")
+local success, err = pcall(function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Zynthire/Nebula/main/main.lua"))()
 end)
 
 if success then
-    print("main.lua loaded successfully")
+    print("Nebula loaded successfully!")
 else
-    warn("Failed to load main.lua:", result)
+    warn("Failed to load Nebula:", err)
 end
